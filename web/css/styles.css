@@ -1,0 +1,341 @@
+@charset "utf-8"; /* Set the Charset of the CSS, I have set this before everything, including comments incase it causes issues */
+
+/*
+    Author: Jordan Hay
+    Date: 26/03/2019
+    File: css/styles.css
+
+    Todo/Further Notes:
+*/
+
+/* Import Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans'); /* Import Open Sans and Montserrate from Google Fonts */
+
+/* General */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; /* Set box sizing of all elements to border box as this style is much more intuitive to use and makes using the responsive design much easier */
+    font-family: "Open Sans",  sans-serif; /* Set all paragraph fonts to Montserrat font with sans-serif as a back up, this is over-ridden in the headings */
+}
+
+body {
+    padding-top: 50px; /* To push page content down to allow for the nav */
+    padding-bottom: 30px; /* Push page content up to allow for footer */
+    background-color: #f8f8ff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif; /* Set all heading fonts to Montserrat font with sans-serif as a back up */
+}
+
+h1 {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 26pt;
+}
+
+/* Holds main page content on every page */
+div.content {
+    margin: 0 auto; /* Positions the content section in the middle of the page */
+    display: table; /* Still allows the margin settings to work while adjusting to the size of the content unlike block */
+}
+
+/* /General */
+
+/* Particles */
+
+canvas{ 
+    position: fixed; /* Canvas will scroll with page */
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1; /* Push canvas down so it is behind the rest of the page content */
+}
+
+/* /Particles */
+
+/* Responsive */
+
+/* Mobile First */
+
+[class*="col-"], div.content {
+    width: 100%;
+    padding: 5px;
+    background-color: #f8f8ff;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+/* Desktop Re-size */
+@media only screen and (min-width: 700px) {
+    .col-1 {
+        width: 8.33%;
+    }
+    
+    .col-2 {
+        width: 16.66%;
+    }
+    
+    .col-3 {
+        width: 25%;
+    }
+    
+    .col-4 {
+        width: 33.33%;
+    
+    }
+    
+    .col-5 {
+        width: 41.66%;
+    }
+    
+    .col-6 {
+        width: 50%;
+    }
+    
+    .col-7 {
+        width: 58.33%;
+    }
+    
+    .col-8, div.content {
+        width: 66.66%;
+    }
+    
+    .col-9 {
+        width: 75%;
+    }
+    
+    .col-10 {
+        width: 83.33%;
+    }
+    
+    .col-11 {
+        width: 91.66%;
+    }
+    
+    .col-12 {
+        width: 100%;
+    }
+}
+
+/* /Responsive */
+
+/* Nav */
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: #6699CC; /* Background of nav colour taken from B4B logo */
+    z-index: 9; /* Make sure nav is 'above' all content */
+    -webkit-transition: ease all 0.5s;
+    -o-transition: ease all 0.5s;
+    -moz-transition: ease all 0.5s;
+    transition: ease all 0.5s;
+    height: 52px;
+}
+
+img#nav-logo {
+    height: 30px;
+    margin: 10px;
+    float: left;
+}
+
+nav a {
+    display: inline-block;
+    -webkit-transition: 0.3s ease all;
+    -o-transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    transition: 0.3s ease all; /* For silky smooth transition on hover */
+    color: RGBA(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 3px;
+}
+
+nav a:hover {
+    color: RGBA(255, 255, 255, 0.9); /* Change colour of nav link text on hover */
+}
+
+nav a.active {
+    color: white;
+}
+
+nav #nav-icon {
+    display: none;
+    text-align: right;
+    float: right;
+    margin-right: 5px;
+}
+
+/* Mobile Nav */
+
+@media screen and (max-width: 700px) {
+
+    nav a {
+        display: none; /* Don't display the nav a when nav is not expanded */
+    }
+
+    nav a#nav-icon {
+        display: block;
+    }
+
+    nav.mobile {
+        position: fixed;
+        display: block;
+        height: 192px; /* Set height is required for a silky smooth opening transition on the mobile nav */
+        overflow: hidden; /* Stop nav text appearing before the nav slides in behind it */
+    }
+
+    nav.mobile #nav-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    nav.mobile a {
+        float: left;
+        width: 100%;
+        display: block;
+    }
+
+    img#nav-logo {
+        display: block;
+    }
+}
+
+/* /Mobile Nav */
+
+/* /Nav */
+
+/* Pages */
+
+/* Home */
+
+p.member span {
+    text-align: center;
+}
+
+p.member span:last-child {
+    text-align: right;
+}
+
+@media screen and (max-width: 700px) {
+    p.member span, p.member span:last-child {
+        text-align: left;
+    }
+}
+
+/* /Home */
+
+/* Books */
+
+#books a {
+    -webkit-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+#books a:hover {
+    /* On hover make the book covers expand slightly */
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+#book-info {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: RGBA(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 9;
+}
+
+#book-info-inner {
+    position: relative;
+    top: 60px;
+    margin-bottom: 30px;
+}
+
+.exit-notice {
+    text-align: center;
+    color: RGBA(0, 0, 0, 0.7);
+    text-decoration: none;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.exit-notice:hover {
+    color: RGBA(0, 0, 0, 0.9);
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+#book-desc {
+    text-align: justify;
+}
+
+#isbn {
+    text-align: center;
+}
+
+/* Used to stop the body from being able to scroll when the book info is open, otherwise two scroll bars would show up */
+.locked {
+    overflow-y: hidden;
+}
+
+/* /Books */
+
+/* Events */
+
+section.event {
+    border-top: 1px solid #6699CC;
+    border-bottom: 1px solid #6699CC;
+}
+
+/* /Events */
+
+/* /Pages */
+
+/* Footer */
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: RGBA(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    padding: 1px;
+    color: #f8f8ff;
+}
+
+/* /Footer */

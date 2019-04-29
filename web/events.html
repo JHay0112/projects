@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+    Author: Jordan Hay
+    Title: B4B - Events
+    Date: 26/03/2019
+    File: events.html
+    Stylesheet: css/styles.css
+    
+    Todo/Further Notes:
+-->
+<html lang="en"> <!-- Set page language -->
+    <head>
+        <meta charset="utf-8" /> <!-- Set Charset of webpage, allows for faster loading in browser -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Set viewport, allows better viewing experience on multiple devices -->
+        <title>B4B - Events</title>
+        <link rel="icon" href="img/b4b-square.png" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" /> <!-- Link styles.css (CSS Stylesheet) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Import custom icons - Used for nav icon -->
+    </head>
+    <body id="particles-js">
+        <nav role="navigation" id="nav" class="nav">
+            <img id="nav-logo" alt="B4B Logo" src="img/b4b_short.png" />
+            <a href="javascript:void(0);" id="nav-icon" onclick="changeNav()"><span class="fa fa-bars"></span></a>
+            <a href="index.html">Home</a>
+            <a href="books.html">Book Reviews</a>
+            <a href="events.html" class="active">Events</a>
+        </nav>
+
+        <!-- Content - Holds main page content, 66.6% of body on desktop -->
+        <div class="content" role="main">
+            <h1 role="heading">Events</h1>
+            <!-- Future Events-->
+            <h3>Future Events</h3>
+            <section class="event">
+                <h2>Adventures of the Black Hand Gang</h2>
+                <p>Published: 1967</p>
+                <p>Author: Hans Jurgen</p>
+                <p>Read by: Mr Jones (MVHS Principal)</p>
+                <p>Date/Time: 4th June at 12:30pm</p>
+                <p>Venue: MVHS Gym</p>
+                <p>Participants/Invitees: Year 9-10 students, family, friends, local community</p>
+                <p>Cost: $5 for non-MVHS participants</p>
+                <p>Book Abstract: Four mysteries are solved by a group of children known as the Black Hand Gang. The reader has to solve problems before they can continue any further</p>
+            </section>
+            <!-- /Future Events -->
+            <!-- Past Events -->
+            <h3>Past Events</h3>
+            <section class="event">
+                <h2>Tales from the Swamp</h2>
+                <p>Kingi McKinnon</p>
+                <p>Event Description: NZ author was invited to read and sign books.<br />A collection of short stories on the life of rural Maori youth in our recent past</p>
+                <p>Date held: April 8th</p>
+                <p>Venue: MVHS Gym</p>
+                <p>Review: The author's tales were full of humour and sadness, especially the heart-wrenching Hohepa's Goodbye</p>
+            </section>
+            <section class="event">
+                <h2>Ninja: First Mission</h2>
+                <p>Author: Chris Bradford and Sonia Leong</p>
+                <p>Event Description: A real ninja instructor came in to read a few chapters from this best-selling youth book</p>
+                <p>Date held: March 5th</p>
+                <p>Venue: MVHS Gym</p>
+                <p>Review: Kept the audience enthralled with the tales of ninja missions, plus some demos of actual techniques</p>
+            </section>
+            <section class="event">
+                <h2>Born to Survive</h2>
+                <p>Author: Bear Grylls</p>
+                <p>Event Description: Books 4 Boredom organised Bear Grylls to come in during lunchtime and read his latest survival book</p>
+                <p>Date held: February 7th</p>
+                <p>Venue: MVHS Outdoor stage</p>
+                <p>Review: Exciting event with great stories of adventure from Bear Grylls</p>
+            </section>
+            <!-- /Past Events -->
+        </div>
+        
+        <footer>
+            <p>Books 4 Boredom || &copy; 2019</p>
+        </footer>
+
+        <!-- Import particles.js --> 
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+        <!-- Import main.js -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

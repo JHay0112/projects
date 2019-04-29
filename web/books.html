@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+    Author: Jordan Hay
+    Title: B4B - Book Reviews
+    Date: 26/03/2019
+    File: books.html
+    Stylesheet: css/styles.css
+    
+    Todo/Further Notes:
+-->
+<html lang="en"> <!-- Set page language -->
+    <head>
+        <meta charset="utf-8" /> <!-- Set Charset of webpage, allows for faster loading in browser -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Set viewport, allows better viewing experience on multiple devices -->
+        <title>B4B - Book Reviews</title>
+        <link rel="icon" href="img/b4b-square.png" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" /> <!-- Link styles.css (CSS Stylesheet) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Import custom icons - Used for nav icon -->
+    </head>
+    <body id="particles-js">
+        <nav role="navigation" id="nav" class="nav">
+            <img id="nav-logo" alt="B4B Logo" src="img/b4b_short.png" />
+            <a href="javascript:void(0);" id="nav-icon" onclick="changeNav()"><span class="fa fa-bars"></span></a>
+            <a href="index.html">Home</a>
+            <a href="books.html" class="active">Book Reviews</a>
+            <a href="events.html">Events</a>
+        </nav> <!-- /Nav -->
+        
+        <!-- Content - Holds main page content, 66.6% of body on desktop -->
+        <div class="content" role="main">
+            <h1 role="heading">Book Reviews</h1>
+            <p>Click on a book cover to view more information about it.</p>
+            <hr />
+            
+            <!-- Books Section -->
+            <section id="books">
+                <!-- Each of these children is 33.3% of the Books section -->
+                <!-- Pawn of Prophecy -->
+                <a class="col-4" href="javascript:void(0);" onclick="loadBook('pawnProph')">
+                    <img class="col-12" src="img/book_pawn_prophecy.JPG" alt="Pawn of Prophecy (The Belgariad, Book 1)" />
+                </a>
+                
+                <!-- Blood of the Mantis -->
+                <a class="col-4" href="javascript:void(0);" onclick="loadBook('bloodMantis')">
+                    <img class="col-12" src="img/book_blood_mantis.JPG" alt="Blood of the Mantis: (Shadows of the Apt Book 3)" />
+                </a>
+                
+                <!-- Walrus and Warwolf -->
+                <a class="col-4" href="javascript:void(0);" onclick="loadBook('walWolf')">
+                    <img class="col-12" src="img/book_walrus_warwolf.JPG" alt="The Walrus and the Warwolf (Chronicles of an Age of Darkness: Volume 4)" />
+                </a>
+                
+                <!-- Way of the Shadows -->
+                <a class="col-4" href="javascript:void(0);" onclick="loadBook('wayShadow')">
+                    <img class="col-12" src="img/book_way_shadows.JPG" alt="The Way of Shadows: (The Night Angel Trilogy 1)" />
+                </a>
+                
+                <!-- Living Wild -->
+                <a class="col-4" href="javascript:void(0);" onclick="loadBook('livingWild')">
+                    <img class="col-12" src="img/book_living_wild.JPG" alt="Bear Grylls Living Wild" />
+                </a>
+            </section> <!-- /Books -->
+            
+            <!-- Book Info - JS fills in the information and then displays the info -->
+            <div id="book-info" class="invisible">
+                <div id="book-info-inner" class="content" role="article">
+
+                    <!-- Exit Button -->
+                    <a class="col-12 exit-notice" href="javascript:void(0);" onclick="hideBook()">Click here to exit</a>
+
+                    <!-- Main Book Info -->
+                    <section class="col-7">
+                        <h2 id="book-title"></h2>
+                        <h4>Author: <span id="book-author"></span></h4>
+                        <p>Published: <span id="publish-date"></span></p>
+                        <p>Publisher: <span id="book-publisher"></span></p>
+                        <p id="book-desc"></p>
+                        <p>$<span id="price"></span></p>
+                    </section>
+                    
+                    <!-- Book Image and ISBN -->
+                    <aside role="complementary" class="col-5">
+                        <img id="book-img" class="col-12" alt="" src="#" />
+                        <p id="isbn" class="col-12"></p>
+                    </aside>
+
+                    <!-- Exit Button -->
+                    <a class="col-12 exit-notice" href="javascript:void(0);" onclick="hideBook()">Click here to exit</a>
+                </div> <!-- /Book Info Inner -->
+            </div> <!-- /Book Info -->
+        </div> <!-- /Content -->
+        
+        <footer>
+            <p>Books 4 Boredom || &copy; 2019</p>
+        </footer>
+
+        <!-- Import particles.js --> 
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+        <!-- Import main.js -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
